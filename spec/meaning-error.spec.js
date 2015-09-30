@@ -1,11 +1,6 @@
 import { expect } from 'chai';
 
-import MeaningError from '../src/meaning-error';
-import BadRequestError from '../src/bad-request-error';
-import InternalServerError from '../src/internal-server-error';
-import MethodNotAllowedError from '../src/method-not-allowed-error';
-import UnauthorizationError from '../src/unauthorization-error';
-import NotFoundError from '../src/not-found-error';
+import {MeaningError, BadRequestError, InternalServerError, MethodNotAllowedError, UnauthorizationError, NotFoundError} from '../src/';
 
 describe('meaning error', function () {
   it('should be able to throw error and catch it', function () {

@@ -14,6 +14,7 @@
     "meaning",
     "error"
   ],
+  "main": "lib/index.js",
   "author": "Vinícius Krolow <krolow@gmail.com>",
   "license": "MIT",
   "dependencies": {
