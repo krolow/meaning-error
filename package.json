@@ -1,0 +1,29 @@
+{
+  "name": "meaning-error",
+  "version": "1.0.0",
+  "description": "Give some meaning to throw errors",
+  "scripts": {
+    "compile": "babel --stage 0 -d lib/ src/",
+    "prepublish": "npm run compile",
+    "test": "NODE_ENV=test mocha --compilers js:babel/register --timeout 30000 --reporter spec ./spec/**/*.spec.js"
+  },
+  "keywords": [
+    "error",
+    "exception",
+    "throw",
+    "meaning",
+    "error"
+  ],
+  "author": "Vinícius Krolow <krolow@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "es6-error": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.3.0",
+    "eslint": "^1.5.1",
+    "eslint-config-airbnb": "^0.1.0",
+    "mocha": "^2.3.3"
+  }
+}
