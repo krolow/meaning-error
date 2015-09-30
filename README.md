@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/krolow/meaning-error.svg?branch=master)](https://travis-ci.org/krolow/meaning-error)
 [![npm version](https://badge.fury.io/js/meaning-error.svg)](http://badge.fury.io/js/meaning-error)
 
-It collects some common throw errors in a lib, to enable catch those easily.
+It collects some common errors in a lib, to enable throw and catch those easily.
 
 ## Why?
 
