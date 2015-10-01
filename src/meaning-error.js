@@ -1,7 +1,7 @@
 import ExtendableError from 'es6-error';
 
 export default class MeaningError extends ExtendableError {
-  constructor(message='Server Error') {
+  constructor(message = 'Server Error') {
     super(message);
 
     this.message = message;
