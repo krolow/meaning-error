@@ -4,7 +4,7 @@ export default class MeaningError extends ExtendableError {
   constructor(message = 'Server Error') {
     super(message);
 
-    this.message = message;
+    this._message = message;
 
     if (!this.code) {
       this.code = 500;
@@ -16,6 +16,6 @@ export default class MeaningError extends ExtendableError {
   }
 
   getMessage() {
-    return this.message;
+    return this._message;
   }
 }
