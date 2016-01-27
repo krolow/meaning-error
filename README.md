@@ -39,7 +39,7 @@ To use when data is not valid;
 
 ##### Options
 - ```message```: Error message
-- ```errors```: Errors to report to requester
+- ```error```: Errors that you to forward for who going to consume BadRequestError
 
 ```js
 throw new BadRequestError(
@@ -55,6 +55,15 @@ throw new BadRequestError(
     }
   ]
 );
+```
+
+**Accessing Error**
+```js
+try {
+  throw new BadRequestError('Something weird', {fieldName: 'something', 'message': 'Bad Format'});
+} catch (e) {
+  e.getError(); //access the error object, the second argument with given errors...
+}
 ```
 
 #### <a name="ForbiddenError"></a>ForbiddenError
