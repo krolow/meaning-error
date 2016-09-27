@@ -1,6 +1,14 @@
 import { expect } from 'chai';
 
-import {MeaningError, BadRequestError, InternalServerError, MethodNotAllowedError, UnauthorizationError, NotFoundError} from '../src/';
+import {
+  MeaningError,
+  BadRequestError,
+  InternalServerError,
+  MethodNotAllowedError,
+  UnauthorizationError,
+  NotFoundError,
+  PaymentRequiredError,
+} from '../src/';
 
 describe('meaning error', function () {
   it('should be able to throw error and catch it', function () {
@@ -29,6 +37,15 @@ describe('meaning error', function () {
       expect(error).to.be.instanceof(BadRequestError);
       expect(error.getMessage()).to.be.equal('Your post data it is not valid!');
       expect(error.getCode()).to.be.equal(400);
+    }
+
+    try {
+      throw new PaymentRequiredError('Bandwidth used');
+    } catch (error) {
+      expect(error).to.be.instanceof(MeaningError);
+      expect(error).to.be.instanceof(PaymentRequiredError);
+      expect(error.getMessage()).to.be.equal('Bandwidth used');
+      expect(error.getCode()).to.be.equal(402);
     }
 
     try {

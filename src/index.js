@@ -5,6 +5,7 @@ import MeaningError from './meaning-error';
 import MethodNotAllowedError from './method-not-allowed-error';
 import NotFoundError from './not-found-error';
 import UnauthorizationError from './unauthorization-error';
+import PaymentRequiredError from './payment-required-error';
 
 export {
   BadRequestError,
@@ -14,4 +15,5 @@ export {
   MethodNotAllowedError,
   NotFoundError,
   UnauthorizationError,
+  PaymentRequiredError,
 };

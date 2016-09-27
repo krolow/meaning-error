@@ -26,6 +26,7 @@ That's what **meaning-error** aim for. It creates a conjunct of standard errors 
 **List of errors to throw:**
 
 - [BadRequestError](#BadRequestError)
+- [PaymentRequiredError](#PaymentRequiredError)
 - [ForbiddenError](#ForbiddenError)
 - [InternalServerError](#InternalServerError)
 - [MethodNotAllowedError](#MethodNotAllowedError)
@@ -66,6 +67,15 @@ try {
 }
 ```
 
+#### <a name="PaymentRequiredError"></a>PaymentRequiredError
+
+To use when *requester* has execeed the daily limits;
+- ```message```: Error message
+
+```js
+throw new PaymentRequiredError('You have abuse your daily limits');
+```
+
 #### <a name="ForbiddenError"></a>ForbiddenError
 
 To use when *requester* does not have *rights* to access *resource*;
@@ -76,7 +86,6 @@ To use when *requester* does not have *rights* to access *resource*;
 ```js
 throw new ForbiddenError('You can not access this news');
 ```
-
 #### <a name="InternalServerError"></a>InternalServerError
 
 To use when some internal error happens;
