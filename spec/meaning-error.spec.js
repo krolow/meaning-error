@@ -8,6 +8,7 @@ import {
   UnauthorizationError,
   NotFoundError,
   PaymentRequiredError,
+  NotAcceptableError,
 } from '../src/';
 
 describe('meaning error', function () {
@@ -73,6 +74,15 @@ describe('meaning error', function () {
       expect(error).to.be.instanceof(UnauthorizationError);
       expect(error.getMessage()).to.be.equal('You must login to access this resource');
       expect(error.getCode()).to.be.equal(401);
+    }
+
+    try {
+      throw new NotAcceptableError('Unnacceptable');
+    } catch (error) {
+      expect(error).to.be.instanceof(MeaningError);
+      expect(error).to.be.instanceof(NotAcceptableError);
+      expect(error.getMessage()).to.be.equal('Unnacceptable');
+      expect(error.getCode()).to.be.equal(406);
     }
   });
 

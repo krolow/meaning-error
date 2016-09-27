@@ -6,6 +6,7 @@ import MethodNotAllowedError from './method-not-allowed-error';
 import NotFoundError from './not-found-error';
 import UnauthorizationError from './unauthorization-error';
 import PaymentRequiredError from './payment-required-error';
+import NotAcceptableError from './not-acceptable-error.js';
 
 export {
   BadRequestError,
@@ -16,4 +17,5 @@ export {
   NotFoundError,
   UnauthorizationError,
   PaymentRequiredError,
+  NotAcceptableError,
 };

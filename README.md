@@ -28,6 +28,7 @@ That's what **meaning-error** aim for. It creates a conjunct of standard errors 
 - [BadRequestError](#BadRequestError)
 - [PaymentRequiredError](#PaymentRequiredError)
 - [ForbiddenError](#ForbiddenError)
+- [NotAccetableError](#NotAccetableError)
 - [InternalServerError](#InternalServerError)
 - [MethodNotAllowedError](#MethodNotAllowedError)
 - [NotFoundError](#NotFoundError)
@@ -79,6 +80,13 @@ throw new PaymentRequiredError('You have abuse your daily limits');
 #### <a name="ForbiddenError"></a>ForbiddenError
 
 To use when *requester* does not have *rights* to access *resource*;
+
+##### Options
+- ```message```: Error message
+
+#### <a name="NotAccetableError"></a>NotAccetableError
+
+To use when *operation* does not support the *requested* content;
 
 ##### Options
 - ```message```: Error message
