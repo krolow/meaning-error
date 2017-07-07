@@ -31,6 +31,7 @@ That's what **meaning-error** aim for. It creates a conjunct of standard errors 
 - [MethodNotAllowedError](#MethodNotAllowedError)
 - [NotFoundError](#NotFoundError)
 - [UnauthorizationError](#UnauthorizationError)
+- [TimeoutError](#TimeoutError)
 - [MeaningError](#MeaningError)
 
 #### <a name="BadRequestError"></a>BadRequestError
@@ -119,6 +120,17 @@ To use when *requester* is not authenticated;
 
 ```js
 throw new UnauthorizationError('You must login to access');
+```
+
+#### <a name="TimeoutError"></a>TimeoutError
+
+To use when *request* reaches a timeout;
+
+##### Options
+- ```message```: Timeout message
+
+```js
+throw new TimeoutError('Timeout');
 ```
 
 #### <a name="MeaningError"></a>MeaningError
