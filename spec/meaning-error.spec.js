@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import {MeaningError, BadRequestError, InternalServerError, MethodNotAllowedError, UnauthorizationError, NotFoundError} from '../src/';
+import {MeaningError, BadRequestError, InternalServerError, MethodNotAllowedError, UnauthorizationError, NotFoundError, TimeoutError} from '../src/';
 
 describe('meaning error', function () {
   it('should be able to throw error and catch it', function () {
@@ -56,6 +56,15 @@ describe('meaning error', function () {
       expect(error).to.be.instanceof(UnauthorizationError);
       expect(error.getMessage()).to.be.equal('You must login to access this resource');
       expect(error.getCode()).to.be.equal(401);
+    }
+
+    try {
+      throw new TimeoutError('Your connection is too slow');
+    } catch (error) {
+      expect(error).to.be.instanceof(MeaningError);
+      expect(error).to.be.instanceof(TimeoutError);
+      expect(error.getMessage()).to.be.equal('Your connection is too slow');
+      expect(error.getCode()).to.be.equal(408);
     }
   });
 
