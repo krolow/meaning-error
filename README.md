@@ -26,6 +26,7 @@ That's what **meaning-error** aim for. It creates a conjunct of standard errors 
 **List of errors to throw:**
 
 - [BadRequestError](#BadRequestError)
+- [ConflictError](#ConflictError)
 - [ForbiddenError](#ForbiddenError)
 - [InternalServerError](#InternalServerError)
 - [MethodNotAllowedError](#MethodNotAllowedError)
@@ -65,6 +66,17 @@ try {
 } catch (e) {
   e.getError(); //access the error object, the second argument with given errors...
 }
+```
+
+#### <a name="ConflictError"></a>ConflictError
+
+To use when the request could not be completed due to a conflict with the current state of the target resource;
+
+##### Options
+- ```message```: Error message
+
+```js
+throw new ConflictError('User is already taken');
 ```
 
 #### <a name="ForbiddenError"></a>ForbiddenError
