@@ -10,6 +10,7 @@ import TimeoutError from './timeout-error';
 
 export {
   BadRequestError,
+  ConflictError,
   ForbiddenError,
   InternalServerError,
   MeaningError,
