@@ -1,9 +1,10 @@
 import ExtendableError from 'es6-error';
 
 export default class MeaningError extends ExtendableError {
-  constructor(message = 'Server Error') {
+  constructor(message = 'Server Error', error = 'server-error') {
     super(message);
 
+    this._error = error;
     this._message = message;
 
     if (!this.code) {
@@ -13,6 +14,10 @@ export default class MeaningError extends ExtendableError {
 
   getCode() {
     return this.code;
+  }
+
+  getError() {
+    return this._error;
   }
 
   getMessage() {
