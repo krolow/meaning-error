@@ -1,6 +1,6 @@
 {
   "name": "meaning-error",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Give some meaning to throw errors",
   "scripts": {
     "compile": "babel --stage 0 -d lib/ src/",
